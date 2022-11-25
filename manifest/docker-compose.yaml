@@ -1,0 +1,17 @@
+version: '3.8'
+name: "water"
+services:
+    mosquitto:
+        container_name: mosquitto
+        image: eclipse-mosquitto:latest
+        restart: always
+        volumes:
+            - "./mosquitto/config:/mosquitto/config"
+            - "./mosquitto/data:/mosquitto/data"
+            - "./mosquitto/log:/mosquitto/log"
+        ports:
+            - "1883:1883"
+        user: "1000:1000"
+        environment:
+            - MQTT_BROKER_URL=mqtt://mosquitto
+

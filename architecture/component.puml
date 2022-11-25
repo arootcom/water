@@ -1,0 +1,39 @@
+@startuml
+
+component Device <<device>> {
+    component Sensor <<device>>
+    component Process <<schedule>>
+    component Driver as "Sensor" <<driver>>
+    component ClientMQ <<client>>
+}
+
+Process -left-> Driver : **1.1** get data
+Driver -up-> Sensor : **1.2** read data
+Process -up-> ClientMQ : **1.3** write data
+
+component Server <<device>> {
+    component Queue <<service>>
+    component Consumer <<service>>
+    database Database <<storage>>
+    component API <<service>>
+    component Web <<service>>
+}
+
+ClientMQ -right-> Queue : **1.4** publish data
+Queue --> Consumer : **1.5** read data
+Consumer -right-> Database : **1.6** save data
+Database <-up- API : **2.4** read data
+API <-right- Web : **2.3** get data
+
+component browser <<client>> {
+    component WebUI
+}
+
+Web -right-> WebUI : **2.2** show data
+
+actor User
+
+WebUI <-down- User : **2.1** use web application
+
+@enduml
+

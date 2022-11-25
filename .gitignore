@@ -1,0 +1,5 @@
+#
+**.swp
+/manifest/mosquitto/data/*.db
+/manifest/mosquitto/log/*.log
+
