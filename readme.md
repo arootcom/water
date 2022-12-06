@@ -3,11 +3,12 @@ Stand for development
 
 ## Start
 
+    cd ./manifest
     docker-compose up -d
 
 ## Logs
 
-    tail -f ./mosquitto/log/mosquitto.log
+    tail -f ./manifest/mosquitto/log/mosquitto.log
 
 ## Dockers
 
