@@ -1,7 +1,11 @@
 
 Using [MQTT](http://en.wikipedia.org/wiki/Mqtt) and [Mosquitto](http://mosquitto.org/)
 
-## How to create a new user?
+## Execute command inside container
+
+    docker exec -it mosquitto sh
+
+## Create a new user
 
     docker exec -it mosquitto mosquitto_passwd -c /mosquitto/config/passwd <user name>
 
