@@ -1,6 +1,4 @@
 
-Stand for development
-
 ## Start
 
     cd ./manifest
