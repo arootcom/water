@@ -1,4 +1,12 @@
 
+## Requires
+
+Install mosquitto-clients
+
+On Linux with the apt-get package manager:
+
+    sudo apt-get install mosquitto-clients
+
 ## Start
 
     cd ./manifest
@@ -8,18 +16,30 @@
 
     tail -f ./manifest/mosquitto/log/mosquitto.log
 
-## Dockers
 
-### Mosquitto
+## Mosquitto
 
 Using [MQTT](http://en.wikipedia.org/wiki/Mqtt) and [Mosquitto](http://mosquitto.org/)
 
-Execute command inside container
+### Subsriber
+
+    mosquitto_sub -t water/level --username water --pw water
+
+### Publisher
+
+    mosquitto_pub -d -h 127.0.0.1 -p 1883 -q 0 -t water/level -m "{\"device\":1,"level":100}" --username water --pw water
+
+### Docker
+
+#### Execute command inside container
 
     docker exec -it mosquitto sh
 
-Create a new user
+#### Change user password / create a new user
 
     docker exec -it mosquitto mosquitto_passwd -c /mosquitto/config/passwd <user name>
 
+#### Delete user
+
+    docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt user
 
