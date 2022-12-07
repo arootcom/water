@@ -43,3 +43,11 @@ Using [MQTT](http://en.wikipedia.org/wiki/Mqtt) and [Mosquitto](http://mosquitto
 
     docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt user
 
+## See Also
+
+[MQTT](http://en.wikipedia.org/wiki/Mqtt)
+[Mosquitto](http://mosquitto.org/)
+[Mosquitto docker-compose](https://github.com/vvatelot/mosquitto-docker-compose)
+[Mosquitto python example](https://github.com/roppert/mosquitto-python-example)
+
+
