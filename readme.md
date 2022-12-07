@@ -27,7 +27,7 @@ Using [MQTT](http://en.wikipedia.org/wiki/Mqtt) and [Mosquitto](http://mosquitto
 
 ### Publisher
 
-    mosquitto_pub -d -h 127.0.0.1 -p 1883 -q 0 -t water/level -m "{\"device\":1,"level":100}" --username water --pw water
+    mosquitto_pub -d -h 127.0.0.1 -p 1883 -q 0 -t water/level -m "{\"device\":1,\"level\":100}" --username water --pw water
 
 ### Docker
 
