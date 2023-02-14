@@ -1,3 +1,7 @@
+# Water component
+
+![Component](./architecture/component.png)
+
 # Requires
 
 ## Clone water
